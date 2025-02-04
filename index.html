@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <img src="assets/image.png" alt="Floww Logo" class="logo" />
+      <h1>Payment Summary</h1>
+    </header>
+
+    <!-- Product List -->
+    <section class="products">
+      <div class="product">
+        <img src="assets/product1.jpeg" alt="Product 1" />
+        <h3>Product A</h3>
+        <p>Price: ₹500</p>
+        <button onclick="addToCart('Product A', 500)">Buy Now</button>
+      </div>
+
+      <div class="product">
+        <img src="assets/product2.jpeg" alt="Product 2" />
+        <h3>Product B</h3>
+        <p>Price: ₹800</p>
+        <button onclick="addToCart('Product B', 800)">Buy Now</button>
+      </div>
+
+      <div class="product">
+        <img src="assets/product3.png" alt="Product 3" />
+        <h3>Product C</h3>
+        <p>Price: ₹1200</p>
+        <button onclick="addToCart('Product C', 1200)">Buy Now</button>
+      </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <section class="cart">
+      <h2>Cart Summary</h2>
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody id="cart-body"></tbody>
+      </table>
+
+      <div class="total">
+        <p>Subtotal: ₹<span id="subtotal">0</span></p>
+        <p>GST (18%): ₹<span id="tax">0</span></p>
+        <h3>Total: ₹<span id="total">0</span></h3>
+      </div>
+
+      <!-- Payment Action Section -->
+      <button id="pay-now" onclick="processPayment()">Pay Now</button>
+      <div id="payment-status" class="hidden">
+        <div class="loader"></div>
+        <p>Payment in progress. Please do not close this window...</p>
+      </div>
+      <p id="payment-result"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Contact Support: info@gofloww.co | Phone: +91 8879138857</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
